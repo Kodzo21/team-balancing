@@ -18,10 +18,8 @@ public class TeamBalancer implements Balancer {
     public List<Team> balance(List<Member> members, int numberOfTeams) {
         validateInput(members, numberOfTeams);
 
-        List<Team> teams = initTeams(numberOfTeams);
-
         Assigner assigner = new EqualSizeTeamAssigner();
-        teams = assigner.assign(members, teams); //assign members to teams
+        var teams = assigner.assign(members, numberOfTeams);
 
         printTeamsDetails(teams);
         return teams;

@@ -32,16 +32,14 @@ public class EqualSizeTeamAssignerTest {
         memberList.add(new Member("Jude", 9));
         memberList.add(new Member("Deborah", 6));
 
-        List<Team> teams = new ArrayList<>();
-        teams.add(new Team());
-        teams.add(new Team());
-        teams.add(new Team());
-
         //when
-        List<Team> balancedTeams = assigner.assign(memberList, teams);
+        List<Team> balancedTeams = assigner.assign(memberList, 3);
         //then
         assertNotNull(balancedTeams);
         assertEquals(3, balancedTeams.size());
+        assertEquals(2, balancedTeams.get(0).getMembers().size());
+        assertEquals(2, balancedTeams.get(1).getMembers().size());
+        assertEquals(2, balancedTeams.get(2).getMembers().size());
     }
 
 
@@ -55,13 +53,8 @@ public class EqualSizeTeamAssignerTest {
         memberList.add(new Member("Juliet", 3));
         memberList.add(new Member("Jude", 9));
 
-        List<Team> teams = new ArrayList<>();
-        teams.add(new Team());
-        teams.add(new Team());
-        teams.add(new Team());
-
         //when
-        final Exception e = assertThrows(UnbalancedTeamsException.class, () -> assigner.assign(memberList, teams));
+        final Exception e = assertThrows(UnbalancedTeamsException.class, () -> assigner.assign(memberList, 3));
         //then
         assertEquals("Number of members must be divisible by number of teams", e.getMessage());
     }

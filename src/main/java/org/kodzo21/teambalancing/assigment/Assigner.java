@@ -6,5 +6,5 @@ import org.kodzo21.teambalancing.model.Team;
 import java.util.List;
 
 public interface Assigner {
-    List<Team> assign(List<Member> members, List<Team> teams);
+    List<Team> assign(List<Member> members, int numberOfTeams);
 }
