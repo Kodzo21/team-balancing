@@ -1,4 +1,4 @@
-package org.kodzo21;
+package org.kodzo21.teambalancing;
 
 public class Main {
     public static void main(String[] args) {
