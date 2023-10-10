@@ -7,7 +7,6 @@ import org.kodzo21.teambalancing.assigment.EqualSizeTeamAssigner;
 import org.kodzo21.teambalancing.exception.InvalidInputException;
 import org.kodzo21.teambalancing.service.TeamService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TeamBalancer implements Balancer {
@@ -32,14 +31,6 @@ public class TeamBalancer implements Balancer {
         if (numberOfTeams <= 0) {
             throw new InvalidInputException("Number of teams must be greater than 0");
         }
-    }
-
-    private List<Team> initTeams(int numberOfTeams) {
-        List<Team> teams = new ArrayList<>();
-        for (int i = 0; i < numberOfTeams; i++) {
-            teams.add(new Team());
-        }
-        return teams;
     }
 
     @Override
