@@ -55,8 +55,8 @@ public class TeamBalancer implements Balancer {
     }
 
     private void printTeamsDetails(List<Team> teams) {
-        for (int i = 0; i < teams.size(); i++) {
-            System.out.println("Team no " + (i + 1) + ": " + teamService.getTeamInfo(teams.get(i)));
+        for (Team team: teams) {
+            System.out.println("Team no " + (teams.indexOf(team)+1) + ": " + teamService.getTeamInfo(team));
         }
         System.out.println("Teams rate standard deviation: " + String.format("%.2f", calculateStandardDeviation(teams)));
     }
