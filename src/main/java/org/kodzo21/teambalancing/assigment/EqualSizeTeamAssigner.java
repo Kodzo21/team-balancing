@@ -18,7 +18,6 @@ public class EqualSizeTeamAssigner implements Assigner {
 
         sortMembersByRate(members);
 
-        //assign members to teams
         final int numberOfTeams = teams.size();
         int teamIndex = 0;
         for (Member member : members) {
@@ -32,14 +31,12 @@ public class EqualSizeTeamAssigner implements Assigner {
     }
 
     private void validateInput(List<Member> members, List<Team> teams) {
-        //handle unbalanced teams
         if (members.size() % teams.size() != 0) {
             throw new UnbalancedTeamsException("Number of members must be divisible by number of teams");
         }
     }
 
     private void sortMembersByRate(List<Member> members) {
-        //sort members by rate in descending order
         members.sort((p1, p2) -> Double.compare(p2.rate(), p1.rate()));
     }
 }

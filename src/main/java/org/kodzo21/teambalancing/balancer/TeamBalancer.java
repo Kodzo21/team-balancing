@@ -28,7 +28,6 @@ public class TeamBalancer implements Balancer {
     }
 
     private void validateInput(List<Member> members, int numberOfTeams) {
-        //input validation
         if (members == null || members.isEmpty()) {
             throw new InvalidInputException("Number of members must be greater than 0");
         }
