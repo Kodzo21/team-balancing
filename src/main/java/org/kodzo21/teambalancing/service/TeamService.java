@@ -24,25 +24,25 @@ public class TeamService {
                 .orElse(0);
     }
 
-    public String getTeamPlayersNames(Team team) {
+    public String getTeamMembersNames(Team team) {
         StringBuilder names = new StringBuilder();
         for (Member member : team.getMembers()) {
             names.append(member.name()).append(" ");
         }
         if (!names.isEmpty())
-            names.deleteCharAt(names.length()-1); // unnecessary space at the end
+            names.deleteCharAt(names.length() - 1); // unnecessary space at the end
         return names.toString();
     }
 
-    public int getNumberOfPlayers(Team team) {
+    public int getNumberOfMembers(Team team) {
         return team.getMembers().size();
     }
 
     public String getTeamInfo(Team team) {
-        return getNumberOfPlayers(team) + " players: (" + getTeamPlayersNames(team) + ") with average rate: " + getAverageRate(team);
+        return getNumberOfMembers(team) + " players: (" + getTeamMembersNames(team) + ") with average rate: " + getAverageRate(team);
     }
 
-    public void addPlayer(Team team, Member member) {
+    public void addMember(Team team, Member member) {
         team.getMembers().add(member);
     }
 
