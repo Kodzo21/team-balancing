@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class EqualSizeTeamAssignerTest {
+class EqualSizeTeamAssignerTest {
 
     private Assigner assigner;
 
@@ -22,7 +22,7 @@ public class EqualSizeTeamAssignerTest {
 
 
     @Test
-    public void shouldAssignMembersToTeams() {
+    void shouldAssignMembersToTeams() {
         //given
         List<Member> memberList = new ArrayList<>();
         memberList.add(new Member("Scarlet", 5));
@@ -44,7 +44,7 @@ public class EqualSizeTeamAssignerTest {
 
 
     @Test
-    public void shouldThrowExceptionWhenNumberOfMembersIsNotDivisibleByNumberOfTeams() {
+    void shouldThrowExceptionWhenNumberOfMembersIsNotDivisibleByNumberOfTeams() {
         //given
         List<Member> memberList = new ArrayList<>();
         memberList.add(new Member("Scarlet", 5));

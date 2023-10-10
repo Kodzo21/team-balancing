@@ -5,12 +5,12 @@ import org.kodzo21.teambalancing.service.TeamService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TeamServiceTest {
+class TeamServiceTest {
 
     private final TeamService teamService = TeamService.getInstance();
 
     @Test
-    public void shouldReturnAverageRate() {
+    void shouldReturnAverageRate() {
         //given
         Team team = new Team();
         teamService.addMember(team, new Member("Scarlet", 5));
@@ -23,7 +23,7 @@ public class TeamServiceTest {
     }
 
     @Test
-    public void shouldReturnTeamPlayersNames() {
+    void shouldReturnTeamPlayersNames() {
         //given
         Team team = new Team();
         teamService.addMember(team, new Member("Scarlet", 5));
@@ -36,7 +36,7 @@ public class TeamServiceTest {
     }
 
     @Test
-    public void shouldReturnTeamInfo() {
+    void shouldReturnTeamInfo() {
         //given
         Team team = new Team();
         teamService.addMember(team, new Member("Scarlet", 5));
@@ -49,7 +49,7 @@ public class TeamServiceTest {
     }
 
     @Test
-    public void shouldReturnNumberOfPlayers() {
+    void shouldReturnNumberOfPlayers() {
         //given
         Team team = new Team();
         teamService.addMember(team, new Member("Scarlet", 5));

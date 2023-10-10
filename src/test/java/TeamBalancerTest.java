@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-public class TeamBalancerTest {
+class TeamBalancerTest {
 
     private TeamBalancer teamBalancer;
 
@@ -23,7 +23,7 @@ public class TeamBalancerTest {
 
 
     @Test
-    public void shouldThrowExceptionWhenNumberOfTeamsIsZero() {
+    void shouldThrowExceptionWhenNumberOfTeamsIsZero() {
         //given
         List<Member> memberList = new ArrayList<>();
         memberList.add(new Member("Scarlet", 5));
@@ -41,7 +41,7 @@ public class TeamBalancerTest {
     }
 
     @Test
-    public void shouldThrowExceptionWhenNumberOfMembersIsZero() {
+    void shouldThrowExceptionWhenNumberOfMembersIsZero() {
         //given
         List<Member> memberList = new ArrayList<>();
         int numberOfTeams = 3;
@@ -52,7 +52,7 @@ public class TeamBalancerTest {
     }
 
     @Test
-    public void shouldReturnBalancedTeams() {
+    void shouldReturnBalancedTeams() {
         //given
         List<Member> memberList = new ArrayList<>();
         memberList.add(new Member("Scarlet", 5));
@@ -73,7 +73,7 @@ public class TeamBalancerTest {
     }
 
     @Test
-    public void shouldReturnTeamsStandardDeviation(){
+    void shouldReturnTeamsStandardDeviation(){
         //given
         List<Team> teams = new ArrayList<>();
 
@@ -98,7 +98,7 @@ public class TeamBalancerTest {
     }
 
     @Test
-    public void shouldThrowExceptionWhenTeamsAreEmpty(){
+    void shouldThrowExceptionWhenTeamsAreEmpty(){
         //given
         List<Team> teams = new ArrayList<>();
         //when
